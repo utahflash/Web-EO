@@ -61,8 +61,9 @@
             <div>
                 <h4 class="text-white font-bold mb-6">Kategori</h4>
                 <ul class="space-y-4">
-                    <li><a href="/?category={{ $cat->slug }}" class="hover:text-white transition">Seminar IT</a></li>
-                    <li><a href="#" class="hover:text-white transition">Entertaiment</a></li>
+                    @foreach($categories as $category)
+                        <li><a href="/?category={{ $category->slug }}" class="hover:text-white transition">{{ $category->name }}</a></li>
+                    @endforeach
                 </ul>
             </div>
             <div>
