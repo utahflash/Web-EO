@@ -82,7 +82,7 @@
                         
                         <div class="relative overflow-hidden aspect-[3/4] bg-slate-100">
                             <img 
-                                src="{{ asset('assets/' . $event->poster_path) }}" 
+                                src="{{ asset('storage/' . $event->poster_path) }}" 
                                 alt="{{ $event->title }}"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 onerror="this.onerror=null;this.src='https://via.placeholder.com/400x600?text=Harap+Ubah+Database';"
@@ -120,5 +120,43 @@
                     </div>
                 @endforeach
             </div>
+    </section>
+
+    <!-- Partner Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-extrabold mb-2">Mitra Kami</h2>
+                <p class="text-slate-500 font-medium">Bekerja sama dengan brand terkemuka untuk memberikan pengalaman terbaik</p>
+            </div>
+        </div>
+
+        @if($partners->count() > 0)
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                @foreach($partners as $partner)
+                    <div class="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 p-6 flex items-center justify-center min-h-[200px]">
+                        @if($partner->logo_path)
+                            <img 
+                                src="{{ asset('storage/' . $partner->logo_path) }}" 
+                                alt="{{ $partner->name }}"
+                                class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                                title="{{ $partner->name }}"
+                            >
+                        @else
+                            <div class="text-center">
+                                <svg class="w-12 h-12 text-slate-300 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                <p class="text-xs text-slate-400">{{ $partner->name }}</p>
+                            </div>
+                        @endif
+                    </div>
+                @endforeach
+            </div>
+        @else
+            <div class="text-center py-16">
+                <p class="text-slate-400 font-medium">Belum ada partner yang terdaftar</p>
+            </div>
+        @endif
     </section>
 @endsection

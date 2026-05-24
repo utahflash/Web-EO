@@ -13,45 +13,45 @@ class PartnerSeeder extends Seeder
      */
     public function run(): void
     {
-        // Buat 8 data partner dummy menggunakan Faker
+        // Buat data partner dengan logo_path yang akan diisi melalui admin panel
         Partner::create([
             'name' => 'PT Telkom Indonesia',
-            'logo_url' => 'https://placeholder.co/200x200'
+            'logo_path' => null
         ]);
 
         Partner::create([
             'name' => 'PT Bank Mandiri',
-            'logo_url' => 'https://placeholder.co/200x200'
+            'logo_path' => null
         ]);
 
         Partner::create([
             'name' => 'PT Pertamina',
-            'logo_url' => 'https://placeholder.co/200x200'
+            'logo_path' => null
         ]);
 
         Partner::create([
             'name' => 'PT PLN',
-            'logo_url' => 'https://placeholder.co/200x200'
+            'logo_path' => null
         ]);
 
         Partner::create([
             'name' => 'PT Garuda Indonesia',
-            'logo_url' => 'https://placeholder.co/200x200'
+            'logo_path' => null
         ]);
 
         Partner::create([
             'name' => 'PT Astra International',
-            'logo_url' => 'https://placeholder.co/200x200'
+            'logo_path' => null
         ]);
 
         Partner::create([
             'name' => 'PT Indofood',
-            'logo_url' => 'https://placeholder.co/200x200'
+            'logo_path' => null
         ]);
 
         Partner::create([
             'name' => 'PT Unilever Indonesia',
-            'logo_url' => 'https://placeholder.co/200x200'
+            'logo_path' => null
         ]);
     }
 }
